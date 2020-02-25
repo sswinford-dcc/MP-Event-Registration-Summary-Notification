@@ -10,6 +10,7 @@
 `This procedure is provided "as is" with no warranties expressed or implied.`
 
 **Description**
+
 This procedure will send a summary email to an Event's Primary Contact with the current count of Participants. To receive the notification, the Contact should have a valid email address and the Event should be both 'public' and also have an active Registration with a Registration Product. The procedure will send summaries weekly on the specified Day of Week, and then daily for any Event when its Start Date is within the Days Before key value.
 
 **Requirements**
@@ -26,3 +27,9 @@ This procedure will send a summary email to an Event's Primary Contact with the 
       **Type:** Transact-SQL script (T-SQL)
       **Database:** MinistryPlatform
       **Command:** EXEC [dbo].[service_notification_event_registrations_summary] @DomainID = 1
+      
+**Installation**
+1. Run event_registration_summary_email_setup.sql to install the required Configuration Setting Keys into your database.
+2. Run service_notification_event_registrations_summary.sql to install the procedure onto your SQL server.
+3. Modify the values for the 3 Configuration Setting Keys. The values must only contain a single integer.
+4. Add a Job Step to a SQL Agent Job that has a daily trigger. See Requirement 2 for more information.
