@@ -1,0 +1,2 @@
+# MP-Event-Registration-Summary-Notification
+This procedure will send an email summary containing the current count of Participants to the Primary Contact of any upcoming Event that is both a 'public' Event and also has an active Registration with a Registration Product. The procedure will send summaries weekly on the specified Day of Week, and then daily for any Event when its Start Date is within the Days Before key value.
