@@ -1,6 +1,5 @@
 USE [MinistryPlatform]
 GO
-/****** Object:  StoredProcedure [dbo].[service_notification_event_registrations_summary]    Script Date: 2/24/2020 1:22:06 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
