@@ -32,7 +32,7 @@ any Event when its Start Date is within the Days Before key value.
 
 https://github.com/sswinford-dcc/MP-Event-Registration-Summary-Notification
 
-/****************************************************
+*****************************************************
 ****************** BEGIN PROCEDURE ******************
 *****************************************************/
 
@@ -41,7 +41,7 @@ DECLARE
 -- These variables are useful for testing
     @TestMode BIT = 0 -- 0 is regular operation, 1 will run the procedure in test mode without sending any email (console output only)
     ,@TestEmail BIT = 0 -- 0 is regular operation, 1 will send all emails to @TestEmailAddress instead of the Event Primary Contact
-    ,@TestEmailAddress VARCHAR(100) = 'sswinford@dreamcitychurch.us' -- Email address that you want to receive emails when @TestEmail is set to 1
+    ,@TestEmailAddress VARCHAR(100) = 'you@yourdomain.org' -- Email address that you want to receive emails when @TestEmail is set to 1
 
 -- These variables are set from Configuration Setting Keys
     ,@MessageID INT = (SELECT top 1 Value FROM dp_Configuration_Settings CS WHERE ISNUMERIC(Value) = 1 AND CS.Domain_ID = @DomainID AND CS.Application_Code = 'Services' AND Key_Name = 'NotificationEventRegistrationsSummaryMessageID')
@@ -49,7 +49,7 @@ DECLARE
     ,@DaysBefore INT = ISNULL((SELECT top 1 Value FROM dp_Configuration_Settings CS WHERE ISNUMERIC(Value) = 1 AND CS.Domain_ID = @DomainID AND CS.Application_Code = 'Services' AND Key_Name = 'NotificationEventRegistrationsSummaryDaysBefore'),3)
 
 -- And these variables are used later in the procedure
-	,@ContactID INT = 0
+    ,@ContactID INT = 0
     ,@EmailTo VARCHAR (500)
     ,@EmailSubject VARCHAR(1000)
     ,@EmailBody VARCHAR(MAX)
