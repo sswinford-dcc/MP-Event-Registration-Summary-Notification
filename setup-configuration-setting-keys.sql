@@ -1,5 +1,5 @@
 /*********************************************
-*** Event Registration Summary Email Setup ***
+*** Setup Event Registration Summary Email ***
 **********************************************
 Version: 1.0
 Author: Stephan Swinford
